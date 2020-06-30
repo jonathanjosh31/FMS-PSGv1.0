@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static "user_interaction/css/Frontend_Theme/assets/css/style.css" %}" />
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{% static "user_interaction/css/Frontend_Theme/assets/vendor/bootstrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "user_interaction/css/Frontend_Theme/assets/vendor/icofont/icofont.min.css" %}" />
+    <link rel="stylesheet" href="{% static "user_interaction/css/Frontend_Theme/assets/vendor/boxicons/css/boxicons.min.css" %}" />
+    <link rel="stylesheet" href="{% static "user_interaction/css/Frontend_Theme/assets/vendor/venobox/venobox.css" %}" />
+    <link rel="stylesheet" href="{% static "user_interaction/css/Frontend_Theme/assets/vendor/owl.carousel/assets/owl.carousel.min.css" %}" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static "user_interaction/css/Frontend_Theme/assets/img/favicon.png" %}" />
+    <link rel="apple-touch-icon" href="{% static "user_interaction/css/Frontend_Theme/assets/img/apple-touch-icon.png" %}" />
+
+
+    <title>Document</title>
+</head>
+<body>
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center"> 
+    <!-- Logo    -->
+    <div class="logo mr-auto">
+        <h1><a href="index.html">FMS</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+    <!-- Logo -->
+
+
+    <!-- navbar -->
+    <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li class="drop-down"><a href="">About</a>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#team">Team</a></li>
+              <li class="drop-down"><a href="#">Deep Drop Dow</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#Prof_name">Prof_name</a></li>
+        </ul>
+      </nav>
+      <!-- navbar -->
+    </div>
+</header>
+
+<!-- Big_Header -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="container text-center text-md-left" data-aos="fade-up">
+      <div class="text-center">
+        <img src="https://www.nj.com/resizer/h8MrN0-Nw5dB5FOmMVGMmfVKFJo=/450x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg" class="mainav" alt="avatar">
+      </div>
+      <br>
+      <h1 class="text-center"><span>{{ full_name }}</span></h1>
+      <h2 class="text-center">{{ management_name }}</h2>
+    </div>
+  </section>
+<!-- Big_Header -->
+
+<!-- User Details Deisplay -->
+<section id="contact" class="contact section-bg">
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+
+      <div class="col-lg-10">
+
+        <div class="info-wrap">
+          <div class="row">
+            <div class="col-lg-6 info">
+              <i class="icofont-ui-user"></i>
+              <h4>Username:</h4>
+              <p>{{ user_name }}</p>
+            </div>
+
+            <div class="col-lg-6 info mt-4 mt-lg-0">
+              <i class="icofont-ghost"></i>
+              <h4>Management Details:</h4>
+              <p>{{ designation }}<br>{{ department }}<br>Mang.Id no<br>vdwqhjdv</p>
+            </div>
+
+            
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row mt-5 justify-content-center">
+
+          <div class="col-lg-10">
+
+            <div class="info-wrap">
+              <div class="row">
+                <div class="col-lg-6 info">
+                  <i class="icofont-phone"></i>
+                  <h4>Contact:</h4>
+                  <p>{{ contact_no }}</p>
+                </div>
+
+                <div class="col-lg-6 info mt-4 mt-lg-0">
+                  <i class="icofont-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>{{ email }}</p>
+                </div>
+
+                
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+    </div>
+</section>
+<!-- User Details Deisplay -->
+
+
+
+<!-- Profile Cards -->
+<section id="what-we-do" class="what-we-do">
+<div class="container">
+<div class="row">
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-file"></i></div>
+      <h4><a href="">Entries</a></h4>
+      <p>Check your day-to-day entries, daily body temp info with FMS, etc</p>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-phone"></i></div>
+      <h4><a href="">Management Interaction</a></h4>
+      <p>Send queries to your managements, check for any messages from the admin, etc</p>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-tachometer"></i></div>
+      <h4><a href="">To be Filled Later!!!</a></h4>
+      <p>To be Filled Later</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+<!-- Profile Cards -->
+
+
+
+<!-- Footer -->
+   
+<footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6 footer-contact border-right">
+            <h3>FMS</h3>
+            <p>
+              PSG College of Technology <br>
+              Peelamedu<br>
+              Coimbatore - 641004 <br><br>
+              <strong>Phone:</strong> +91 9489267534<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <h4>Furthur Upcoming Updates</h4>
+                </div>
+                <div class="row">    
+                    <button class="button_normal">Checkout!</button>
+                </div>
+                <br>
+                <div class="row">
+                    <h4>Our Social Handles</h4>
+                    <!-- social_media_links -->
+                    <div class="header-social-links">
+                    <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- social_media_links -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+
+
+
+
+
+    <!-- All JS Files -->
+     <!-- Vendor JS Files -->
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/jquery.easing/jquery.easing.min.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/php-email-form/validate.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/waypoints/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/counterup/counterup.min.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/venobox/venobox.min.js" %}"></script>
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/vendor/owl.carousel/owl.carousel.min.js" %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static "user_interaction/css/Frontend_Theme/assets/js/main.js" %}"></script>
+
+
+</body>
+</html>
