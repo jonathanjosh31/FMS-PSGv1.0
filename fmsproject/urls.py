@@ -1,4 +1,4 @@
-"""fmsproject URL Configuration
+"""fms_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -18,7 +18,6 @@ from django.urls import path,include
 from user_interaction import views
 
 urlpatterns = [
-    path('',views.root_page,name='rootpage'),
-    path('userdetails/',include('user_interaction.urls')),
     path('admin/', admin.site.urls),
+    path('useraccount/',include('user_interaction.urls')),
 ]
