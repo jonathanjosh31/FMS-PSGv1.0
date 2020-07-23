@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import StudentAccount
+from .models import StudentAccount,StudentEntryDetail
 from .forms import raw_user_form
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -79,12 +79,11 @@ def student_prof_page(request):
 
 def entriespage(request):
     
-    cur_entry = StudentEntry.objects.get(account=request.user)
-    user_entry_dict = {
-        'user_entry' : cur_entry,
+    userentry = StudentEntryDetail.objects.get(account=request.user)
+    entrydetail = userentry.entries
+    context = {
+        'user_entry' : entrydetail,
     }
-    
-    return render(request,'user_interaction/student_entry.html',context=user_entry_dict)
-
+    return render(request,'user_interaction/student_entry.html',context)
 
     

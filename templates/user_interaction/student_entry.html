@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {% for entry in user_entry %}
+    <h2>
+        Year : {{ entry.Year }}
+        Month : {{ entry.Month }}
+        Day : {{ entry.Day }}
+        Hour : {{ entry.Hour }}
+        Minute : {{ entry.Minute }}
+        Second : {{ entry.Second }}
+    </h2>
+    {% endfor %}
 </body>
 </html>
