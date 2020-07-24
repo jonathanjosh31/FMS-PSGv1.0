@@ -2377,7 +2377,7 @@ a.disabledcomingsoon {
   color: #fff;
   font-size: 16px;
   line-height: 40px;
-  font-family: 'Oswald', sans-serif;;
+  font-family: 'Oswald', sans-serif;
   font-weight: 400;
 }
 
@@ -2387,7 +2387,24 @@ a.disabledcontact {
 }
 
 
+.workscarouseltitle{
+  font-family: 'Oswald', sans-serif ;
+  font-style: italic;
+  font-weight: 600;
+}
 
+.workscarouselsub{
+  font-family: 'Kanit', sans-serif ;
+  font-weight: 400;
+}
+
+.carouselimg{
+  border-radius: 26px;
+}
+
+hr.carouselhr{
+  border: 1px solid rgb(197, 187, 187);
+}
 
 
 

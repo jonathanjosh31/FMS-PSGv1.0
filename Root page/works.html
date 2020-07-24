@@ -27,7 +27,7 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
@@ -84,29 +84,60 @@
               </p>
             </div>
           </div>
+          <br>
           <div class="row about-container">
             
-            <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-                <img src="img/undraw_playing_cards_cywn.svg" class="img-fluid" alt="">
+            <div class="container wow fadeInUp w-75">
+              <h4 class="text-center wow fadeInUp workscarouseltitle mt-4">A Dual Mode System</h4>
+              <hr class="carouselhr">
+              <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                </ol>
+                <!--/.Indicators-->
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                    <div class="view">
+                      <img class="d-block w-100 carouselimg" src="img/hospitalcarousel.jpg"
+                        alt="First slide" >
+                      <div class="mask rgba-black-light"></div>
+                    </div>
+                  
+                      <h3 class="h3-responsive text-center workscarouselsub pt-5">Hospital Management</h3>
+                      <p class="text-center">First text</p>
+                    
+                  </div>
+                  <div class="carousel-item">
+                    <!--Mask color-->
+                    <div class="view">
+                      <img class="d-block w-100 carouselimg" src="img/collegecarousel1.jpg"
+                        alt="Second slide" >
+                      <div class="mask rgba-black-strong"></div>
+                    </div>
+                      <div></div>
+                      <h3 class="h3-responsive text-center workscarouselsub pt-5">College-Oriented Management</h3>
+                      <p class="text-center">Secondary text</p>
+              
+                  </div>
+                  
+                </div>
+                <!--/.Slides-->
+                <!--Controls-->
+                <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <!--/.Controls-->
               </div>
-  
-            <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0 mt-5">
-                <h6 class="title">A Dual Mode system.</h6>
-  
-              <div class="icon-box wow fadeInUp mt-5">
-                <div class="icon"><i class="fa fa-user"></i></div>
-                <h4 class="title">General Mode</h4>
-                <p class="description">The general visitor mode is for the non-registered users occasionally visiting the premises. The later mode is for the faculties and the students of that institution.
-                    No records or details are collected in the general visitor mode. In this mode, the visitor is checked for their temperature and a respective message is displayed.
-                    .</p>
-              </div>
-  
-              <div class="icon-box wow fadeInUp mt-4" data-wow-delay="0.2s">
-                <div class="icon"><i class="fa fa-users"></i></div>
-                <h4 class="title">Institutional Mode</h4>
-                <p class="description">In the institutional mode, users are already registered to the system and are given with a unique QR code. This unique QR code is then scanned at the device, and then the temperature check is carried on. The temperature readings are then recorded in the database for further analysis.</p>
-              </div>
-            </div>
+                  </div>
   
             
 
@@ -118,6 +149,11 @@
   
         </div>
       </section><!-- #about -->
+
+
+      <!--Carousel Wrapper-->
+    
+<!--/.Carousel Wrapper-->
 
       <div class="header-button text-center">
         <a href="index.html" style="color: white;background-color:#28D3FF ;"  class="btn btn-border-filled"><i class="fa fa-caret-left"></i> Back to Home</a>
