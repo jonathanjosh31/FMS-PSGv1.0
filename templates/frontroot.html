@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -10,15 +11,15 @@
     <title>Proton - Bootstrap 4 Template</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/line-icons.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/nivo-lightbox.css">
-    <link rel="stylesheet" href="css/main.css">    
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{% static "Root_page/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/line-icons.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.carousel.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.theme.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/nivo-lightbox.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/main.css" %}">    
+    <link rel="stylesheet" href="{% static "Root_page/css/responsive.css" %}">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
@@ -31,7 +32,7 @@
       <div class="overlay"></div>
       <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
         <div class="container">
-          <a href="index.html" class="navbar-brand"><img src="img/Psglogonav.png" alt=""></a>
+          <a href="index.html" class="navbar-brand"><img src="{% static "Root_page/img/Psglogonav.png" %}" alt=""></a>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <p class="Logotitle" style="font-family: 'Oswald', sans-serif;">PSG College of Technology Presents</p>
           </div>
@@ -75,7 +76,7 @@
           </div>
           <div class="col-lg-5 col-md-12 col-xs-12">
             <div class="intro-img">
-              <img src="img/frontlogo.png" alt="">
+              <img src="{% static "Root_page/img/frontlogo.png" %}" alt="">
             </div>            
           </div>
         </div> 
@@ -88,7 +89,7 @@
       <div class="container">
         <div class="section-header">   
           <p class="btn btn-subtitle wow fadeInDown" data-wow-delay="0.2s">features</p>       
-          <h2 class="section-title wow fadeIn" data-wow-delay="0.2s">Amazing Features</h2>
+          <h2 class="section-title wow fadeIn" data-wow-delay="0.2s">Our Device Features</h2>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-12 col-xs-12">
@@ -111,14 +112,23 @@
                 </span>
                 <div class="text">
                   <h4>Stats</h4>
-                  <p>Keep in track with your body temperatures by viewing your daily entries in your profile page and much more.</p>
+                  <p>Keep in track with people's body temperatures with temperature analysis charts,etc.</p>
+                </div>
+              </div>
+              <div class="box-item left">
+                <span class="icon">
+                  <i class="lni lni-alarm"></i>
+                </span>
+                <div class="text">
+                  <h4>Alerts</h4>
+                  <p>Get an alerted notification whenever someone has abnormal temperatures.</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-12 col-xs-12">
             <div class="show-box">
-              <img src="img/features/features1.png" alt="">
+              <img src="{% static "Root_page/img/features/features1.png" %}" alt="">
             </div>
           </div>
           <div class="col-lg-4 col-md-12 col-xs-12">
@@ -140,8 +150,17 @@
                   <i class="lni-star-filled"></i>
                 </span>
                 <div class="text">
-                  <h4>Student Stats</h4>
-                  <p>Maintain and manipulate all the student stats .</p>
+                  <h4>Pending</h4>
+                  <p>Pending .</p>
+                </div>
+              </div>
+              <div class="box-item right">
+                <span class="icon">
+                  <i class="lni-shield"></i>
+                </span>
+                <div class="text">
+                  <h4>Management</h4>
+                  <p>Admins can maintain all employee and patients temperature stats in the hospital.</p>
                 </div>
               </div>
             </div>
@@ -174,7 +193,7 @@
         <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-              <img class="img-fluid" src="img/features/howitworks.jpg" alt="">
+              <img class="img-fluid" src="{% static "Root_page/img/features/howitworks.jpg" %}" alt="">
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
@@ -184,7 +203,7 @@
                 <h3>Contactless COVID-19 Screening System!!</h3>
                 <p>This temperature check tablet is installed to ensure that people entering the college premises are not running a high temperature. It provides alerts when a person runs a high temperature and thus should not enter the premises.
                   First, the user is supposed to scan their unique QR code in the device. Later, their body temperature is scanned and the output is displayed along with an alert message when the user runs high temperature.</p>
-                <a class="btn btn-rm" href="works.html">Read More <i class="lni-arrow-right"></i></a>
+                <a class="btn btn-rm" href="{% url 'howitworks' %}">Read More <i class="lni-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -194,7 +213,7 @@
             <div class="text-wrapper wow fadeInRight" data-wow-delay="0.9s">
               <div>
                 <p class="btn btn-subtitle">Updates</p>  
-                <h3>Regular!</h3>
+                <h3>Regular Updates!</h3>
                 <p>New features and updates will be tested and implemented soon.All the incoming updates will be notified here.</p>
                 <a class="btn btn-rm disabledcomingsoon" href="#">Coming Soon!</i></a>
               </div>
@@ -202,7 +221,7 @@
           </div>
            <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="img-thumb wow fadeInLeft" data-wow-delay="1.2s">
-              <img class="img-fluid" src="img/features/updates.jpg" alt="">
+              <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
             </div>
           </div>
         </div>
@@ -221,32 +240,32 @@
           <div class="touch-slider owl-carousel">
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="img/screenshot/img-1.png" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-1.png" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="img/screenshot/img-2.png" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-2.png" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="img/screenshot/img-3.png" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-3.png" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="img/screenshot/img-4.png" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-4.png" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="img/screenshot/img-5.png" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-5.png" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="img/screenshot/img-6.png" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-6.png" %}" alt="">
               </div>
             </div>
           </div>
@@ -268,12 +287,12 @@
             <!-- Blog Item Starts -->
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
-                <a href="blog1.html">
-                  <img src="img/blog/safetyblog.jpg" alt="">
+                <a href="{% url 'blogone' %}">
+                  <img src="{% static "Root_page/img/blog/safetyblog.jpg" %}" alt="">
                 </a>             
               </div>
               <div class="blog-item-text"> 
-                <h3><a href="blog1.html">Protective Measures against COVID-19</a></h3>
+                <h3><a href="{% url 'blogone' %}">Protective Measures against COVID-19</a></h3>
                 <div class="author">
                   <span class="name"><a href="#">From the Team</a></span>
                   <span class="date float-right">17 August, 2020</span>
@@ -429,22 +448,22 @@
     <!-- End Preloader -->
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="js/jquery-min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.js"></script> 
-    <script src="js/jquery.mixitup.js"></script>       
-    <script src="js/jquery.nav.js"></script>    
-    <script src="js/scrolling-nav.js"></script>    
-    <script src="js/jquery.easing.min.js"></script>     
-    <script src="js/wow.js"></script>   
-    <script src="js/jquery.counterup.min.js"></script>     
-    <script src="js/nivo-lightbox.js"></script>     
-    <script src="js/jquery.magnific-popup.min.js"></script>     
-    <script src="js/waypoints.min.js"></script>      
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>   
-    <script src="js/main.js"></script>
+    <script src="{% static "Root_page/js/jquery-min.js" %}"></script>
+    <script src="{% static "Root_page/js/popper.min.js" %}"></script>
+    <script src="{% static "Root_page/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "Root_page/js/owl.carousel.js" %}"></script> 
+    <script src="{% static "Root_page/js/jquery.mixitup.js" %}"></script>       
+    <script src="{% static "Root_page/js/jquery.nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/scrolling-nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/jquery.easing.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/wow.js" %}"></script>   
+    <script src="{% static "Root_page/js/jquery.counterup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/nivo-lightbox.js" %}"></script>     
+    <script src="{% static "Root_page/js/jquery.magnific-popup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/waypoints.min.js" %}"></script>      
+    <script src="{% static "Root_page/js/form-validator.min.js" %}"></script>
+    <script src="{% static "Root_page/js/contact-form-script.js" %}"></script>   
+    <script src="{% static "Root_page/js/main.js" %}"></script>
     
   </body>
 </html>

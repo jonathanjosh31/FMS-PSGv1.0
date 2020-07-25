@@ -1,29 +1,30 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/line-icons.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/nivo-lightbox.css">
-    <link rel="stylesheet" href="css/main.css">    
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{% static "Root_page/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/line-icons.css"  %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.carousel.css"  %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.theme.css"  %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/nivo-lightbox.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/main.css" %}">    
+    <link rel="stylesheet" href="{% static "Root_page/css/responsive.css" %}">
 
 
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "Root_page/lib/font-awesome/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/animate/animate.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/owlcarousel/assets/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/lightbox/css/lightbox.min.css" %}">
 
      <!-- Main Stylesheet File -->
-    <link href="css/styleworks.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "Root_page/css/styleworks.css" %}">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
@@ -66,13 +67,13 @@
             </div>
   
             <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-              <img src="img/undraw_content_structure_79gj.svg" class="img-fluid" alt="">
+              <img src="{% static "Root_page/img/undraw_content_structure_79gj.svg" %}" class="img-fluid" alt="">
             </div>
           </div>
   
           <div class="row about-extra">
             <div class="col-lg-6 wow fadeInUp">
-              <img src="img/undraw_visual_data_b1wx.svg" class="img-fluid" alt="">
+              <img src="{% static "Root_page/img/undraw_visual_data_b1wx.svg" %}" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
               <h4>Temperature Check Analysis Chart.</h4>
@@ -102,7 +103,7 @@
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
                     <div class="view">
-                      <img class="d-block w-100 carouselimg" src="img/hospitalcarousel.jpg"
+                      <img class="d-block w-100 carouselimg" src="{% static "Root_page/img/hospitalcarousel.jpg" %}"
                         alt="First slide" >
                       <div class="mask rgba-black-light"></div>
                     </div>
@@ -114,7 +115,7 @@
                   <div class="carousel-item">
                     <!--Mask color-->
                     <div class="view">
-                      <img class="d-block w-100 carouselimg" src="img/collegecarousel1.jpg"
+                      <img class="d-block w-100 carouselimg" src="{% static "Root_page/img/collegecarousel1.jpg" %}"
                         alt="Second slide" >
                       <div class="mask rgba-black-strong"></div>
                     </div>
@@ -156,7 +157,7 @@
 <!--/.Carousel Wrapper-->
 
       <div class="header-button text-center">
-        <a href="index.html" style="color: white;background-color:#28D3FF ;"  class="btn btn-border-filled"><i class="fa fa-caret-left"></i> Back to Home</a>
+        <a href="{% url 'root_front' %}" style="color: white;background-color:#28D3FF ;"  class="btn btn-border-filled"><i class="fa fa-caret-left"></i> Back to Home</a>
       </div>
       <br>
 
@@ -256,38 +257,38 @@
 
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="js/jquery-min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.js"></script> 
-    <script src="js/jquery.mixitup.js"></script>       
-    <script src="js/jquery.nav.js"></script>    
-    <script src="js/scrolling-nav.js"></script>    
-    <script src="js/jquery.easing.min.js"></script>     
-    <script src="js/wow.js"></script>   
-    <script src="js/jquery.counterup.min.js"></script>     
-    <script src="js/nivo-lightbox.js"></script>     
-    <script src="js/jquery.magnific-popup.min.js"></script>     
-    <script src="js/waypoints.min.js"></script>      
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>   
-    <script src="js/main.js"></script>
+    <script src="{% static "Root_page/js/jquery-min.js" %}"></script>
+    <script src="{% static "Root_page/js/popper.min.js" %}"></script>
+    <script src="{% static "Root_page/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "Root_page/js/owl.carousel.js" %}"></script> 
+    <script src="{% static "Root_page/js/jquery.mixitup.js" %}"></script>       
+    <script src="{% static "Root_page/js/jquery.nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/scrolling-nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/jquery.easing.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/wow.js" %}"></script>   
+    <script src="{% static "Root_page/js/jquery.counterup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/nivo-lightbox.js" %}"></script>     
+    <script src="{% static "Root_page/js/jquery.magnific-popup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/waypoints.min.js" %}"></script>      
+    <script src="{% static "Root_page/js/form-validator.min.js" %}"></script>
+    <script src="{% static "Root_page/js/contact-form-script.js" %}"></script>   
+    <script src="{% static "Root_page/js/main.js" %}"></script>
 
     <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/mobile-nav/mobile-nav.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="{% static "Root_page/lib/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/jquery/jquery-migrate.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/easing/easing.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/mobile-nav/mobile-nav.js" %}"></script>
+  <script src="{% static "Root_page/lib/wow/wow.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/waypoints/waypoints.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/counterup/counterup.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/isotope/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/lightbox/js/lightbox.min.js" %}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/mainworks.js"></script>
+  <script src="{% static "Root_page/js/mainworks.js" %}"></script>
 
 
 

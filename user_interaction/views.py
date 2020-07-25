@@ -7,8 +7,20 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+
+
+# ################################################# Views for Root ############################################################
 def root(request):
     return render(request,'root.html')
+
+def root_front_page(request):
+    return render(request,'frontroot.html')
+
+def how_it_works(request):
+    return render(request,'works.html')
+
+def blogone(request):
+    return render(request,'blog1.html')
 
 
 def student_logout(request):

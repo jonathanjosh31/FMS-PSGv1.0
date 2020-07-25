@@ -25,7 +25,9 @@ from user_interaction.api import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('useraccount/',include('user_interaction.urls')),
-    path('',views.root),
+    path('',views.root_front_page,name='root_front'),
+    path('blogone/',views.blogone,name='blogone'),
+    path('howitworks/',views.how_it_works,name='howitworks'),
     url(r'^api/student_list/$', StudentList.as_view(),name='Student_list'),
     url(r'^api/student_list/(.*)$', StudentDetail.as_view(),name='Student_Detail'),
     url(r'^api/device_list/$', DeviceList.as_view(),name='Device_list'),
