@@ -33,13 +33,13 @@
       <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
         <div class="container">
           <a href="index.html" class="navbar-brand"><img src="{% static "Root_page/img/Psglogonav.png" %}" alt=""></a>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <p class="Logotitle" style="font-family: 'Oswald', sans-serif;">PSG College of Technology Presents</p>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          
+            <p class="Logotitle" style="font-family: 'Oswald', sans-serif;font-size: 13px;">PSG College of Technology Presents</p>
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="collapse navbar-collapse" id="navbarCollapse1">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#home">Home</a>
@@ -70,7 +70,7 @@
               <h2 class="head-title">COVID-19<br>Screening Kiosk </h2>
               <p>The COVID-19 Screening Kisok is a thermal screening device that monitors the body temperature of the users.</p>
               <div class="header-button">
-                <a href="#" class="btn btn-border-filled">Login</a>
+                <a href="{% url 'studentlogin' %}" class="btn btn-border-filled">Login</a>
               </div>
             </div>
           </div>
