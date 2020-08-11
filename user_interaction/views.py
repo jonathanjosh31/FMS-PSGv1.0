@@ -8,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
+######################################## Custom Functions for Views ################################################
+
+
 
 # ################################################# Views for Root ############################################################
 def root(request):
@@ -49,6 +52,7 @@ def student_registration(request):
                 save_obj.department = form.cleaned_data['department']
                 save_obj.residential_status = form.cleaned_data['residential_status']
                 save_obj.email = form.cleaned_data['email']
+                save_obj.batch_year = form.cleaned_data['batch_year']
                 save_obj.set_password(form.cleaned_data['password'])
                 save_obj.save()
                 return redirect('/useraccount/thankyoupage/')
@@ -84,18 +88,27 @@ def thank_you_page(request):
 def student_prof_page(request):
     
     curobj = StudentAccount.objects.get(username=request.user)
+    pos = curobj.email.find("@")
+    email_name = str(curobj.email[0:pos])
+    email_domain = str(curobj.email[pos:len(curobj.email)])
+
+
     user_dict = {
         'logged_student' :curobj,
+        'emailname' : email_name,
+        'emaildomain' : email_domain
     }
-    return render(request,'user_interaction/student_prof.html',context=user_dict)
+    return render(request,'user_interaction/student_prof_new.html',context=user_dict)
 
 def entriespage(request):
     
     userentry = StudentEntryDetail.objects.get(account=request.user)
     entrydetail = userentry.entries
     context = {
-        'user_entry' : entrydetail,
-    }
-    return render(request,'user_interaction/student_entry.html',context)
+          'user_entry' : entrydetail,
+      }
 
-    
+    return render(request,'user_interaction/entries.html',context)
+
+def statschart(request):
+    return render(request,'user_interaction/stats_chart.html')

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
+    'django_mysql',
     'user_interaction',
     'rest_framework',
     'rest_framework.authtoken',
@@ -83,14 +84,30 @@ WSGI_APPLICATION = 'fms_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
+DATABASE_ROUTERS = ['fms_project.router.AuthRouter',]   
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'FMS-PSG',
-        'USER' : 'postgres',
-        'PASSWORD' : 'postgres1234',
-        'HOST' : 'localhost'
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+
+
+    'user_interaction_db' :{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'FMS_Database',
+        'USER': 'fmsdbadmin',
+        'PASSWORD': 'fevmonsys',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            # Tell MySQLdb to connect with 'utf8mb4' character set
+            'charset': 'utf8mb4',
+        },
+    },
+    
 }
 
 

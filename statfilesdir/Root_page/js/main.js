@@ -96,8 +96,8 @@
         stopOnHover: true,
         autoPlay: true,
         addClassActive: true,
-        items: 3,
-        itemsDesktopSmall: [1024, 3],
+        items: 1,
+        itemsDesktopSmall: [1024, 1],
         itemsTablet: [600, 1],
         itemsMobile: [479, 1]
       });

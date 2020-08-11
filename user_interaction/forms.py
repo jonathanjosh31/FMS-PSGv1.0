@@ -12,6 +12,7 @@ class raw_user_form(forms.Form):
     department = forms.CharField(label='Department',widget=forms.TextInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Department'}))
     password = forms.CharField(label='Password',widget=forms.PasswordInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Password'}))
     confirm_password = forms.CharField(label='Confirm Password',widget=forms.PasswordInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Confirm Password'}))
+    batch_year = forms.CharField(label='Batch Year',widget=forms.TextInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Joining Year'}))
 
     def clean_full_name(self):
         data = self.cleaned_data.get('full_name')
@@ -66,7 +67,7 @@ class raw_user_form(forms.Form):
          if fd==0:
              raise forms.ValidationError("Password should contain atleast one number from 0-9!")
          return data
-    
+
     def clean_confirm_password(self):
         data1 = self.cleaned_data.get('password')
         data = self.cleaned_data.get('confirm_password')

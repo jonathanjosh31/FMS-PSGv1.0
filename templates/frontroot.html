@@ -23,6 +23,17 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <style>
+      @media only screen and (min-width: 992px) {
+        #screenshotcarousel  > .item > .screenshot-thumb > img {
+          width:1000px;
+          height:360px;
+}
+      }
+
+    </style>
+
   </head>
   
   <body>
@@ -237,35 +248,35 @@
           <h2 class="section-title">App Screens</h2>
         </div>
         <div class="row">
-          <div class="touch-slider owl-carousel">
+          <div class="screens-slider owl-carousel" id="screenshotcarousel">
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-1.png" %}" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="" id="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-2.png" %}" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-3.png" %}" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-4.png" %}" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-5.png" %}" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
               </div>
             </div>
             <div class="item">
               <div class="screenshot-thumb">
-                <img class="img-fluid" src="{% static "Root_page/img/screenshot/img-6.png" %}" alt="">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
               </div>
             </div>
           </div>
@@ -464,6 +475,8 @@
     <script src="{% static "Root_page/js/form-validator.min.js" %}"></script>
     <script src="{% static "Root_page/js/contact-form-script.js" %}"></script>   
     <script src="{% static "Root_page/js/main.js" %}"></script>
+
+
     
   </body>
 </html>
