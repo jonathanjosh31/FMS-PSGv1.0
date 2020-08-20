@@ -88,7 +88,7 @@
    }
 /* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */ 
 .fadeOut  {
-  -webkit-animation-name : fadeOut  ;
+  -webkit-animation-name : slideOutDown  ;
   animation-name : fadeOut  ;
 }  
 @-webkit-keyframes  fadeOut  {

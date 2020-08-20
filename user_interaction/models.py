@@ -114,3 +114,8 @@ class Visitor(models.Model):
 class StudentEntryDetail(models.Model):
     account = models.ForeignKey(StudentAccount,on_delete=models.CASCADE)
     entries = JSONField(default=list)
+
+
+class StudentMedicalReport(models.Model):
+    account1 = models.ForeignKey(StudentAccount,on_delete=models.CASCADE)
+    medical_reports = JSONField(default=list)

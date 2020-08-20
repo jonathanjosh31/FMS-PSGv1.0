@@ -9,4 +9,6 @@ urlpatterns = [
     path('studentuser/',views.student_prof_page,name='studentuser'),
     path('studententry/',views.entriespage,name='studententry'),
     path('statschart/',views.statschart,name='statschart'),
+    path('medicalreport/',views.medicalReport,name='medicalreport'),
+    path('medicalreportshow/',views.medical_reports_show,name='medicalreportshow'),
 ]

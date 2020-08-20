@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts and icons -->
+	<script src="{% static "user_interaction/assets/js/plugin/webfont/webfont.min.js" %}"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: [ '{% static "user_interaction/assets/css/fonts.min.css" %}' ]},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/atlantis.min.css" %}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        .navbar-header[data-background-color="blue2"] {
+            background: #03b6fc !important; }
+        .logo-header[data-background-color="blue2"] {
+            background: #03b6fc !important; }
+    </style>
+
+
+    <title>Medical Reports</title>
+</head>
+<body>
+    
+    <div class="wrapper overlay-sidebar">
+        <div class="wrapper">
+            <div class="main-header">
+
+                <div class="logo-header" data-background-color="blue2">
+                        
+                    <h3 class="fw-bold text-white">COVID-19 Kiosk</h3>
+                    
+                    <button class=  "topbar-toggler more"><i class="icon-options-vertical"></i></button>
+                   
+                </div>
+        
+            <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+                        
+                <div class="container-fluid">
+                   
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                       
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="nav-link" href="{% url 'studentuser' %}">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <i class="fas fa-cog"></i>
+                            </a>
+                            <div class="dropdown-menu quick-actions quick-actions-info animated fadeIn ">
+                                <div class="quick-actions-header" style="background-image: linear-gradient(-90deg, rgb(166, 217, 226), #03b6fc);">
+                                    <span class="title mb-1">Options</span>
+                                </div>
+                                <div class="quick-actions-scroll scrollbar-outer">
+                                    <div class="quick-actions-items">
+                                        <div class="row m-0">
+                                            <a class="col-6 col-md-6 p-0" href="{% url 'studententry' %}">
+                                                <div class="quick-actions-item">
+                                                    <i class="flaticon-list"></i>
+                                                    <span class="text" style="font-family: 'Poppins', sans-serif;">My Entries</span>
+                                                </div>
+                                            </a>
+                                            <a class="col-6 col-md-6 p-0" href="{% url 'statschart' %}">
+                                                <div class="quick-actions-item">
+                                                    <i class="flaticon-graph-2"></i>
+                                                    <span class="text" style="font-family: 'Poppins', sans-serif;">My stats</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <div class="avatar-sm">
+                                    <img src="{% static "user_interaction/assets/img/profile.jpg" %}" alt="..." class="avatar-img rounded-circle">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                <div class="dropdown-user-scroll scrollbar-outer">
+                                    <li>
+                                        <div class="user-box">
+                                            <div class="avatar-lg"><img src="{% static "user_interaction/assets/img/profile.jpg" %}" alt="image profile" class="avatar-img rounded"></div>
+                                            <div class="u-text">
+                                                <h4 style="font-family: 'Poppins', sans-serif;">{{ logged_student.username }}</h4>
+                                                <p class="text-muted" style="font-family: 'Poppins', sans-serif;">{{ logged_student.full_name }}</p><a href="#" class="btn btn-xs btn-primary btn-sm">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{% url 'studentlogout' %}" style="font-family: 'Poppins', sans-serif;">Logout</a>
+                                       
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            </div>
+
+             <!-- Main Content -->
+        <div class="main-panel">
+            <div class="content">
+                <div class="jumbotron jumbotron-fluid mt-4" style="background-image: linear-gradient(-90deg, rgb(255, 255, 255), #84d0ee);">
+                <h1 class="text-center pb-4 display-4" style="font-family: 'Poppins', sans-serif;color: black;"><i class="fa fa-user-md" aria-hidden="true"></i>   Pre-Existing Diseases Record</h1>
+                <div class="row mt-4" >
+                    <div class="col-md-4">
+                        <div class="card card-stats card-round">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            {% if preexisting.diabetes == 'Yes' %}
+                                            <i class="fa fa-check-circle text-success"></i>
+                                            {% else %}
+                                            <i class="fa fa-times-circle text-danger"></i>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-stats">
+                                        <div class="numbers">
+                                            <h4 class="card-title" style="font-family: 'Poppins', sans-serif;color:#272a35;">Diabetes </h4>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-stats card-round">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            {% if preexisting.pulmonary_diseases == 'Yes' %}
+                                            <i class="fa fa-check-circle text-success"></i>
+                                            {% else %}
+                                            <i class="fa fa-times-circle text-danger"></i>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-stats">
+                                        <div class="numbers">
+                                            <h4 class="card-title" style="font-family: 'Poppins', sans-serif;color:#272a35;">Pulmonary Diseases </h4>
+                                   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-stats card-round">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            {% if preexisting.high_low_pressure == 'Yes' %}
+                                            <i class="fa fa-check-circle text-success"></i>
+                                            {% else %}
+                                            <i class="fa fa-times-circle text-danger"></i>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-stats">
+                                        <div class="numbers">
+                                            <h4 class="card-title" style="font-family: 'Poppins', sans-serif;color:#272a35;">High/Low Pressure</h4>
+                                  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-stats card-round">
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            {% if preexisting.respiratory_diseases == 'Yes' %}
+                                            <i class="fa fa-check-circle text-success"></i>
+                                            {% else %}
+                                            <i class="fa fa-times-circle text-danger"></i>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-stats">
+                                        <div class="numbers">
+                                            <h4 class="card-title" style="font-family: 'Poppins', sans-serif;color:#272a35">Respiratory Diseases </h4>
+                                           </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="{% static "user_interaction/assets/img/custom/preexisting.svg" %}" alt="entries" style="width: 300px;height: 300px;" class="">
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row mt-4 container-fluid" >
+                <div class="col-md-4">
+                    <div class="card" style="box-shadow: 1px 3px 13px rgb(182, 178, 178);background-image: linear-gradient(-360deg, rgb(240, 240, 240), #fcfcfc);color: black;">
+                        <div class="card-header text-center"><h1 class="fw-bold">For the last couple of Days</h1>
+                        <p class="h4 fw-bold">Last Entry ({{ last_couple.date }})</p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mt-3 b-b1 pb-2 mb-4" style="font-family: 'Poppins', sans-serif;border-bottom: 1.5px rgb(2, 127, 230) solid;">Contacted people being infected or suspected for COVID-19 in the last 30 days</h5>
+                            <h2 class="mb-4 fw-bold">
+                                {% if last_couple.contact30 == 'Yes' %}
+                                    <i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i>
+                                {% else %}
+                                    <i class="fa fa-times-circle" aria-hidden="true" style="color: red;"></i>
+                                {% endif %}
+                                {{ last_couple.contact30 }}
+                            </h2>
+                            <h5 class="mt-3 b-b1 pb-2 mb-4" style="font-family: 'Poppins', sans-serif;border-bottom: 1.5px rgb(230, 176, 2) solid;" disabled>Diagnosed for COVID-19 in the last 30 days</h5>
+                            <h2 class="mb-4 fw-bold">
+                                {% if last_couple.diagnose30 == 'Yes' %}
+                                    <i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i>
+                                {% else %}
+                                    <i class="fa fa-times-circle" aria-hidden="true" style="color: red;"></i>
+                                {% endif %}
+                                {{ last_couple.diagnose30 }}
+                            </h2>
+                            <h5 class="mt-3 b-b1 pb-2 mb-4" style="font-family: 'Poppins', sans-serif;border-bottom: 1.5px rgb(236, 39, 39) solid;" disabled>Visited any COVID-19 containment zones in the last 10 days?</h5>
+                            <h2 class="mb-4 fw-bold">
+                                {% if last_couple.visit10 == 'Yes' %}
+                                    <i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i>
+                                {% else %}
+                                    <i class="fa fa-times-circle" aria-hidden="true" style="color: red;"></i>
+                                {% endif %}
+                                {{ last_couple.visit10 }}
+                            </h2>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-black" style="box-shadow: 1px 3px 13px rgb(182, 178, 178);background-image: linear-gradient(-360deg, rgb(240, 240, 240), #fcfcfc);color: black;">
+                        <div class="card-header text-center"><h2 class="fw-bold">Any Indications for the Last 14 Days</h2>
+                        <p class="h4 fw-bold">Last Entry ({{ last_couple.date }})</p>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mt-3 b-b1 pb-2 mb-4" style="font-family: 'Poppins', sans-serif;border-bottom: 1.5px rgb(2, 127, 230) solid;">Fever</h5>
+                            <h2 class="mb-4 fw-bold">
+                                {% if last_couple.fever == 'Yes' %}
+                                    <i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i>
+                                {% else %}
+                                    <i class="fa fa-times-circle" aria-hidden="true" style="color: red;"></i>
+                                {% endif %}
+                                {{ last_couple.fever }}
+                            </h2>
+                            <h5 class="mt-3 b-b1 pb-2 mb-4" style="font-family: 'Poppins', sans-serif;border-bottom: 1.5px rgb(230, 176, 2) solid;">Dry Cough</h5>
+                            <h2 class="mb-4 fw-bold">
+                                {% if last_couple.dry_cough == 'Yes' %}
+                                    <i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i>
+                                {% else %}
+                                    <i class="fa fa-times-circle" aria-hidden="true" style="color: red;"></i>
+                                {% endif %}
+                                {{ last_couple.dry_cough }}
+                            </h2>
+                            <h5 class="mt-3 b-b1 pb-2 mb-4" style="font-family: 'Poppins', sans-serif;border-bottom: 1.5px rgb(2, 127, 230) solid;">Breathing Problem</h5>
+                            <h2 class="mb-4 fw-bold">
+                                {% if last_couple.breathing_prob == 'Yes' %}
+                                    <i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i>
+                                {% else %}
+                                    <i class="fa fa-times-circle" aria-hidden="true" style="color: red;"></i>
+                                {% endif %}
+                                {{ last_couple.breathing_prob }}
+                            </h2>
+                            <h5 class="mt-3 b-b1 pb-2 mb-4" style="font-family: 'Poppins', sans-serif;border-bottom: 1.5px rgb(236, 39, 39) solid;" disabled>Sore Throat</h5>
+                            <h2 class="mb-4 fw-bold">
+                                {% if last_couple.sore_throat == 'Yes' %}
+                                    <i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i>
+                                {% else %}
+                                    <i class="fa fa-times-circle" aria-hidden="true" style="color: red;"></i>
+                                {% endif %}
+                                {{ last_couple.sore_throat }}
+                            </h2>
+                               
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <a href="{% url 'medicalreport' %}">
+                    <div class="card" style="box-shadow: 1px 3px 13px rgb(204, 202, 202);">
+                        <div class="card-body pb-0">
+                            
+                            <h2 class="mb-2 text-center text-success text-uppercase" style="font-family: 'Poppins', sans-serif;">Periodic Medical Forum</h2>
+                            <div class="text-center">
+                            <img src="{% static "user_interaction/assets/img/custom/periodicforum.svg" %}" alt="entries" style="width: 200px;height: 200px;" class="">
+                            </div>
+                            <p class="text-muted text-center" style="font-family: 'Poppins', sans-serif;"> Complete your periodic medical reports by answering few questions to keep your medical status upto date.</p>
+                            
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+
+
+     <!--   Core JS Files   -->
+	<script src="{% static "user_interaction/assets/js/core/jquery.3.2.1.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/popper.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/bootstrap.min.js" %}"></script>
+
+	<!-- jQuery UI -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" %}"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js" %}"></script>
+
+
+	<!-- Chart JS -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart.js/chart.min.js" %}"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js" %}"></script>
+
+	<!-- Chart Circle -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart-circle/circles.min.js" %}"></script>
+
+	<!-- Datatables -->
+	<script src="{% static "user_interaction/assets/js/plugin/datatables/datatables.min.js" %}"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="{% static "user_interaction/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js" %}"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/jquery.vmap.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" %}"></script>
+
+	<!-- Sweet Alert -->
+	<script src="{% static "user_interaction/assets/js/plugin/sweetalert/sweetalert.min.js" %}"></script>
+
+	<!-- Atlantis JS -->
+    <script src="{% static "user_interaction/assets/js/atlantis.min.js" %}"></script>
+
+</body>
+</html>

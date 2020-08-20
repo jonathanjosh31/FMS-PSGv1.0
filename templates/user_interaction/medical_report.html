@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Fonts and icons -->
+	<script src="{% static "user_interaction/assets/js/plugin/webfont/webfont.min.js" %}"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: [ '{% static "user_interaction/assets/css/fonts.min.css" %}' ]},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static "Root_page/css/animate.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/atlantis.min.css" %}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.carousel.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.theme.css" %}">
+    
+    <style>
+        .navbar-header[data-background-color="blue2"] {
+            background: #03b6fc !important; }
+        .logo-header[data-background-color="blue2"] {
+            background: #03b6fc !important; }
+    </style>
+
+    <title>Medical Report</title>
+</head>
+<body>
+    
+    <div class="wrapper overlay-sidebar">
+        <div class="wrapper">
+            <div class="main-header">
+
+                <div class="logo-header" data-background-color="blue2">
+                        
+                    <h3 class="fw-bold text-white">COVID-19 Kiosk</h3>
+                    
+                    <button class=  "topbar-toggler more"><i class="icon-options-vertical"></i></button>
+                   
+                </div>
+        
+            <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+                        
+                <div class="container-fluid">
+                   
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                       
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="nav-link" href="{% url 'studentuser' %}">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <i class="fas fa-cog"></i>
+                            </a>
+                            <div class="dropdown-menu quick-actions quick-actions-info animated fadeIn ">
+                                <div class="quick-actions-header" style="background-image: linear-gradient(-90deg, rgb(166, 217, 226), #03b6fc);">
+                                    <span class="title mb-1">Options</span>
+                                </div>
+                                <div class="quick-actions-scroll scrollbar-outer">
+                                    <div class="quick-actions-items">
+                                        <div class="row m-0">
+                                            <a class="col-6 col-md-6 p-0" href="{% url 'studententry' %}">
+                                                <div class="quick-actions-item">
+                                                    <i class="flaticon-list"></i>
+                                                    <span class="text" style="font-family: 'Poppins', sans-serif;">My Entries</span>
+                                                </div>
+                                            </a>
+                                            <a class="col-6 col-md-6 p-0" href="{% url 'statschart' %}">
+                                                <div class="quick-actions-item">
+                                                    <i class="flaticon-graph-2"></i>
+                                                    <span class="text" style="font-family: 'Poppins', sans-serif;">My stats</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <div class="avatar-sm">
+                                    <img src="{% static "user_interaction/assets/img/profile.jpg" %}" alt="..." class="avatar-img rounded-circle">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                <div class="dropdown-user-scroll scrollbar-outer">
+                                    <li>
+                                        <div class="user-box">
+                                            <div class="avatar-lg"><img src="{% static "user_interaction/assets/img/profile.jpg" %}" alt="image profile" class="avatar-img rounded"></div>
+                                            <div class="u-text">
+                                                <h4 style="font-family: 'Poppins', sans-serif;">{{ logged_student.username }}</h4>
+                                                <p class="text-muted" style="font-family: 'Poppins', sans-serif;">{{ logged_student.full_name }}</p><a href="#" class="btn btn-xs btn-primary btn-sm">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{% url 'studentlogout' %}" style="font-family: 'Poppins', sans-serif;">Logout</a>
+                                       
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            </div>
+
+            <div class="main-panel">
+                <div class="content">
+                    
+                    <div class="row container-fluid mt-4">
+                        <div class="custom1">
+                            <form method="POST">
+                                {% csrf_token %}
+                            <div class="item">
+                            <div class="container-fluid text-center">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-head-row">
+                                        <div class="card-title text-center">Pre-exixting Diseases</div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    
+                                    <div class="chart-container" style="min-height: 375px">
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5 pr-5">Diabetes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.diabetes }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5">Pulmonary Diseases</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.pulmonary_diseases }}
+                                                </label>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5">High / Low Pressure</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.high_low_pressure }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5">Respiratory Diseases</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.respiratory_diseases }}
+                                                </label>
+                                             
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5 pr-5">Any Other &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.any_other }}
+                                                </label>
+                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container-fluid text-center">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-head-row">
+                                        <div class="card-title">For the last couple of days</div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                              
+                                    <div class="chart-container" style="min-height: 375px">
+                                        <div class="form-group">
+                                            <p class="mb-3 text-justify font-weight-bold text-center">Have you been contacted people being infected or suspected for COVID-19 in the last 30 days?</p>
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="selectgroup-item">
+                                                    {{ report.contact30 }}
+                                                </label>
+                                             
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="mb-3 text-justify font-weight-bold text-center">
+                                            Have you been diagnosed for COVID-19 in the last 30 days?
+                                            </p>
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="selectgroup-item">
+                                                    {{ report.diagnose30 }}
+                                                </label>
+                                         
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="mb-3 text-justify font-weight-bold text-center">Have you visited any COVID-19 containment zones in the last 10 days?</p>
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="selectgroup-item">
+                                                    {{ report.visit10 }}
+                                                </label>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                           
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container-fluid">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-head-row">
+                                        <div class="card-title">Please state whether you have experienced/experiencing the following <br>(indicates for last 14 days symptopms)</div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                
+                                    <div class="chart-container" style="min-height: 375px">
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5 pr-5">Fever &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.fever }}
+                                                </label>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5">Dry Cough</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.dry_cough }}
+                                                </label>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5">Breathing Problem</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.breathing_prob }}
+                                                </label>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                <label class="form-label d-block pt-2 mr-5">Sore Throat</label>
+                                                <label class="selectgroup-item">
+                                                    {{ report.sore_throat }}
+                                                </label>
+                                               
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Submit" name="Submit" class="mt-3 btn btn-rounded" style="background-color: #03b6fc;color: white;">
+                                    </div>
+                              
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </form>
+                          </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+        </div>    
+    </div>
+
+    
+
+
+
+    <!--   Core JS Files   -->
+	<script src="{% static "user_interaction/assets/js/core/jquery.3.2.1.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/popper.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/bootstrap.min.js" %}"></script>
+
+	<!-- jQuery UI -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" %}"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js" %}"></script>
+
+
+	<!-- Chart JS -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart.js/chart.min.js" %}"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js" %}"></script>
+
+	<!-- Chart Circle -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart-circle/circles.min.js" %}"></script>
+
+	<!-- Datatables -->
+	<script src="{% static "user_interaction/assets/js/plugin/datatables/datatables.min.js" %}"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="{% static "user_interaction/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js" %}"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/jquery.vmap.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" %}"></script>
+
+	<!-- Sweet Alert -->
+	<script src="{% static "user_interaction/assets/js/plugin/sweetalert/sweetalert.min.js" %}"></script>
+
+	<!-- Atlantis JS -->
+    <script src="{% static "user_interaction/assets/js/atlantis.min.js" %}"></script>
+
+    <!-- Owl Carousel -->
+    <script src="{% static "Root_page/js/owl.carousel.js" %}"></script> 
+
+
+<script>
+
+var owl = $('.custom1').owlCarousel({
+    animateOut: 'fadeOut',
+    items:1,
+    margin:30,
+    stagePadding:30,
+    smartSpeed:450,
+    loop: true,
+});
+
+</script>
+
+</body>
+</html>
