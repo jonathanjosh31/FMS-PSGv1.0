@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'devices',
-    'promotions'
+    'promotions',
+    'doctorvisitor',
 ]
 
 MIDDLEWARE = [
@@ -85,17 +86,12 @@ WSGI_APPLICATION = 'fms_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-DATABASE_ROUTERS = ['fms_project.router.AuthRouter',]   
+#DATABASE_ROUTERS = ['fms_project.router.AuthRouter',]   
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
 
-
-    'user_interaction_db' :{
+    'default' :{
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'FMS_Database',
         'USER': 'fmsdbadmin',

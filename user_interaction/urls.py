@@ -11,4 +11,5 @@ urlpatterns = [
     path('statschart/',views.statschart,name='statschart'),
     path('medicalreport/',views.medicalReport,name='medicalreport'),
     path('medicalreportshow/',views.medical_reports_show,name='medicalreportshow'),
+    path('doctorvisitorpage/',views.doctor_visitor_page,name='doctorvisitorpage'),
 ]

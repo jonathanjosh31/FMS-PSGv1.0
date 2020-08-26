@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts and icons -->
+	<script src="{% static "user_interaction/assets/js/plugin/webfont/webfont.min.js" %}"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: [ '{% static "user_interaction/assets/css/fonts.min.css" %}' ]},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+    <!-- CSS Files -->
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/atlantis.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/css/hover5.css" %}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        .center {
+        margin: auto;
+        width: 70%;
+        padding: 10px;
+    }
+    .btncenter {
+        margin: auto;
+        padding: 10px;
+    }
+    </style>
+
+
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="wrapper overlay-sidebar">
+        <div class="wrapper">
+            <div class="main-panel">
+                <div class="content">
+            
+                    <div class="row container-fluid">
+                        <div class="col-md-12">
+                            <div class="card center" style="min-height: 650px;">
+                                <div class="card-header">
+									<div class="card-title text-center font-weight-light" style="font-family: 'Poppins', sans-serif;font-size: 40px;">Register</div>
+                                </div>
+                                <div class="card-body">
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                    <div class="form-group form-floating-label center" style="max-width: 500px;">
+                                        {{ form.username }}
+                                        <label for="inputFloatingLabel" class="placeholder">Username</label>
+                                        <br><br>
+                                    </div>
+                                    <div class="form-group form-floating-label center" style="max-width: 500px;">
+                                        {{ form.password }}
+                                        <label for="inputFloatingLabel" class="placeholder">Password</label>
+                                        <br><br>
+                                    </div>
+                                    <div class="form-group form-floating-label center" style="max-width: 500px;">
+                                       {{ form.email }}
+                                        <label for="inputFloatingLabel" class="placeholder">Email</label>
+                                        <br><br>
+                                    </div>
+                                    <div class="form-group form-floating-label center" style="max-width: 500px;">
+                                        {{ form.full_name }}
+                                        <label for="inputFloatingLabel" class="placeholder">Full Name</label>
+                                        <br><br>
+                                    </div>
+                                    <div class="form-group form-floating-label center" style="max-width: 500px;">
+                                        {{ form.contact_no }}
+                                        <label for="inputFloatingLabel" class="placeholder">Contact</label>
+                                        <br><br>
+                                    </div>
+                                    <div class="text-center">
+                                    <input type="submit" name="submit" value="Submit" class="btn btn-rounded">
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+           
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--   Core JS Files   -->
+	<script src="{% static "user_interaction/assets/js/core/jquery.3.2.1.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/popper.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/bootstrap.min.js" %}"></script>
+
+	<!-- jQuery UI -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" %}"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js" %}"></script>
+
+
+	<!-- Chart JS -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart.js/chart.min.js" %}"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js" %}"></script>
+
+	<!-- Chart Circle -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart-circle/circles.min.js" %}"></script>
+
+	<!-- Datatables -->
+	<script src="{% static "user_interaction/assets/js/plugin/datatables/datatables.min.js" %}"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="{% static "user_interaction/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js" %}"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/jquery.vmap.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" %}"></script>
+
+	<!-- Sweet Alert -->
+	<script src="{% static "user_interaction/assets/js/plugin/sweetalert/sweetalert.min.js" %}"></script>
+
+	<!-- Atlantis JS -->
+    <script src="{% static "user_interaction/assets/js/atlantis.min.js" %}"></script>
+
+
+</body>
+</html>

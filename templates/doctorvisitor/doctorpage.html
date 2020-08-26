@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts and icons -->
+	<script src="{% static "user_interaction/assets/js/plugin/webfont/webfont.min.js" %}"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: [ '{% static "user_interaction/assets/css/fonts.min.css" %}' ]},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+    <!-- CSS Files -->
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/atlantis.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/css/hover5.css" %}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        .center {
+        margin: auto;
+        width: 70%;
+        padding: 10px;
+    }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper overlay-sidebar" id="vantajs">
+        <div class="wrapper">
+            <div class="main-panel">
+                <div class="content">
+                    <h1 class="text-center text-white font-weight-bold" style="font-family: 'Poppins', sans-serif;font-size: 28px;">Welcome Back! <i class="fa fa-user-md" aria-hidden="true"></i> </h1>
+                    <br>
+                    <div class="row container-fluid">
+                        <div class="col-md-4">
+                            <a href="{% url 'patiententrytable' %}">
+                            <div class="card" style="min-height: 550px;">
+                                
+                                <div class="card-body hvr-sweep-to-right">
+                                    <br><br>
+									<div class="text-center font-weight-light" style="font-family: 'Poppins', sans-serif;font-size: 35px;">Patient Entry Details </div>
+                                    <div class="text-center">
+                                        <img src="{% static "user_interaction/assets/img/custom/patienttable.svg" %}" alt="entries" style="width: 300px;height: 300px;" class="">
+                                    </div>
+                                </div> 
+                            </div>
+                        </a>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-12 hvr-push">
+                            <div class="card card-stats card-round">
+                                <div class="card-body">
+                                    <div class="row">
+                                    <div class="col-5">
+                                        <div class="icon-big text-center">
+                                            <i class="fa fa-user text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-stats">
+                                        <div class="numbers">
+                                            <p class="card-category" style="font-family: 'Poppins', sans-serif;">Full Name</p>
+                                            <h4 class="card-title">{{ doctor.name }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 hvr-push">
+                        <div class="card card-stats card-round">
+                            <div class="card-body">
+                                <div class="row">
+                                <div class="col-5">
+                                    <div class="icon-big text-center">
+                                        <i class="fa fa-user text-warning"></i>
+                                    </div>
+                                </div>
+                                <div class="col-7 col-stats">
+                                    <div class="numbers">
+                                        <p class="card-category" style="font-family: 'Poppins', sans-serif;">Username</p>
+                                        <h4 class="card-title">{{ doctor.username }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 hvr-push">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="fa fa-user text-warning"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-stats">
+                                <div class="numbers">
+                                    <p class="card-category" style="font-family: 'Poppins', sans-serif;">Email</p>
+                                    <h4 class="card-title">{{ emailname }} </h4>
+                                    <p style="font-family: 'Poppins', sans-serif;">{{ emaildomain }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 hvr-push">
+                <div class="card card-stats card-round">
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-5">
+                            <div class="icon-big text-center">
+                                <i class="fa fa-user text-warning"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 col-stats">
+                            <div class="numbers">
+                                <p class="card-category" style="font-family: 'Poppins', sans-serif;">Contact No</p>
+                                <h4 class="card-title">{{ doctor.contact_no }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{% url 'visitorstoday' %}">
+                            <div class="card" style="min-height: 550px;">
+                                <div class="card-body hvr-sweep-to-right">
+                                    <br><br>
+                                    <div class="text-center font-weight-light" style="font-family: 'Poppins', sans-serif;font-size: 35px;">Today's Patient Entry</div>
+                                    <div class="text-center">
+                                        <img src="{% static "user_interaction/assets/img/custom/dailyentries.svg" %}" alt="entries" style="width: 300px;height: 300px;" class="">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!--   Core JS Files   -->
+	<script src="{% static "user_interaction/assets/js/core/jquery.3.2.1.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/popper.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/bootstrap.min.js" %}"></script>
+
+	<!-- jQuery UI -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" %}"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js" %}"></script>
+
+
+	<!-- Chart JS -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart.js/chart.min.js" %}"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js" %}"></script>
+
+	<!-- Chart Circle -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart-circle/circles.min.js" %}"></script>
+
+	<!-- Datatables -->
+	<script src="{% static "user_interaction/assets/js/plugin/datatables/datatables.min.js" %}"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="{% static "user_interaction/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js" %}"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/jquery.vmap.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" %}"></script>
+
+	<!-- Sweet Alert -->
+	<script src="{% static "user_interaction/assets/js/plugin/sweetalert/sweetalert.min.js" %}"></script>
+
+	<!-- Atlantis JS -->
+    <script src="{% static "user_interaction/assets/js/atlantis.min.js" %}"></script>
+
+    <!-- Vanta JS -->
+    <script src="{% static "user_interaction/js/three.r119.min.js" %}"></script>
+    <script src="{% static "user_interaction/js/vanta.waves.min.js" %}"></script>
+
+    <script>
+        VANTA.WAVES({
+          el: "#vantajs",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x2f91cc,
+          shininess: 13.00,
+          waveHeight: 19.50,
+          waveSpeed: 1.40,
+          zoom: 0.73
+        });
+        </script>
+
+</body>
+</html>

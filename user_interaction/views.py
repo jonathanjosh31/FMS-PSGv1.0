@@ -214,3 +214,6 @@ def medical_reports_show(request):
     }
 
     return render(request,'user_interaction/medical_report_show.html',context)
+
+def doctor_visitor_page(request):
+    return render(request,'user_interaction/doctor_visitor_page.html')

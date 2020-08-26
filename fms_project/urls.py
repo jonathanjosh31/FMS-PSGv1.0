@@ -25,6 +25,7 @@ from user_interaction.api import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('useraccount/',include('user_interaction.urls')),
+    path('doctorvisitor/',include('doctorvisitor.urls')),
     path('',views.root_front_page,name='root_front'),
     path('blogone/',views.blogone,name='blogone'),
     path('howitworks/',views.how_it_works,name='howitworks'),
