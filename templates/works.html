@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static "Root_page/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/line-icons.css"  %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.carousel.css"  %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.theme.css"  %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/nivo-lightbox.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/main.css" %}">    
+    <link rel="stylesheet" href="{% static "Root_page/css/responsive.css" %}">
+
+
+    <link rel="stylesheet" href="{% static "Root_page/lib/font-awesome/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/animate/animate.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/owlcarousel/assets/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/lib/lightbox/css/lightbox.min.css" %}">
+
+     <!-- Main Stylesheet File -->
+    <link rel="stylesheet" href="{% static "Root_page/css/styleworks.css" %}">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+</head>
+<body>
+
+      <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+        <div class="container">
+  
+          <header class="section-header">
+            <h3>How it Works?</h3>
+            <p class="h3">The COVID-19 monitoring system.</p>
+          </header>
+  
+          <div class="row about-container">
+  
+            <div class="col-lg-6 content order-lg-1 order-2">
+              <p class="">
+                The temperature monitoring tablet helps monitor the entrances to ensure people entering into premises don’t run high temperatures.  It provides alerts when a person runs a high temperature and thus should not enter the premises. 
+              </p>
+  
+              <div class="icon-box wow fadeInUp">
+                <div class="icon" style="color: #28D3FF;"><i class="fa fa-qrcode"></i></div>
+                <h4 class="title">QR Code</h4>
+                <p class="description">A registered user is supposed to scan their unique QR code in the tablet device. This ensures that their temperature readings are recorded in the database.</p>
+              </div>
+  
+              <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+                <div class="icon"><i class="fa fa-thermometer-full"></i></div>
+                <h4 class="title">Temperature Detection</h4>
+                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+              <img src="{% static "Root_page/img/undraw_content_structure_79gj.svg" %}" class="img-fluid" alt="">
+            </div>
+          </div>
+  
+          <div class="row about-extra">
+            <div class="col-lg-6 wow fadeInUp">
+              <img src="{% static "Root_page/img/undraw_visual_data_b1wx.svg" %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+              <h4>Temperature Check Analysis Chart.</h4>
+              <p>
+                A registered user is given the privilege to analyze their previous body temperature readings. The user is given the opportunity to view and compare their readings week wise and month wise with simple visual charts.
+              </p>
+              <p>
+                Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
+              </p>
+            </div>
+          </div>
+          <br>
+          <div class="row about-container">
+            
+            <div class="container wow fadeInUp w-75">
+              <h4 class="text-center wow fadeInUp workscarouseltitle mt-4">A Dual Mode System</h4>
+              <hr class="carouselhr">
+              <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                </ol>
+                <!--/.Indicators-->
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                    <div class="view">
+                      <img class="d-block w-100 carouselimg" src="{% static "Root_page/img/hospitalcarousel.jpg" %}"
+                        alt="First slide" >
+                      <div class="mask rgba-black-light"></div>
+                    </div>
+                  
+                      <h3 class="h3-responsive text-center workscarouselsub pt-5">Hospital Management</h3>
+                      <p class="text-center">First text</p>
+                    
+                  </div>
+                  <div class="carousel-item">
+                    <!--Mask color-->
+                    <div class="view">
+                      <img class="d-block w-100 carouselimg" src="{% static "Root_page/img/collegecarousel1.jpg" %}"
+                        alt="Second slide" >
+                      <div class="mask rgba-black-strong"></div>
+                    </div>
+                      <div></div>
+                      <h3 class="h3-responsive text-center workscarouselsub pt-5">College-Oriented Management</h3>
+                      <p class="text-center">Secondary text</p>
+              
+                  </div>
+                  
+                </div>
+                <!--/.Slides-->
+                <!--Controls-->
+                <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <!--/.Controls-->
+              </div>
+                  </div>
+  
+            
+
+            
+          </div>    
+  
+            
+          </div>
+  
+        </div>
+      </section><!-- #about -->
+
+
+      <!--Carousel Wrapper-->
+    
+<!--/.Carousel Wrapper-->
+
+      <div class="header-button text-center">
+        <a href="{% url 'root_front' %}" style="color: white;background-color:#28D3FF ;"  class="btn btn-border-filled"><i class="fa fa-caret-left"></i> Back to Home</a>
+      </div>
+      <br>
+
+
+
+
+
+      <footer id="footerdown">
+        <!-- Footer Area Start -->
+        <section class="footer-Content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+                <p class="footertitle" >COVID-19 Screening Kiosk</p>
+                <div class="textwidget">
+                  <p>The COVID-19 Screening Kisok is a thermal screening device that monitors the body temperature of the users.</p>
+                </div>
+                
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+                <div class="widget">
+                  <h3 class="block-title">Resources</h3>
+                  <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="http://psgimsr.ac.in/">About the Institution</a></li>
+                    <li><a href="#">Team</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+              <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+                <div class="widget">
+                  <h3 class="block-title">Resource</h3>
+                  <ul class="menu">
+                    <li><a href="#">Comunnity</a></li>
+                    <li><a href="#">Become a Partner</a></li>
+                    <li><a href="#">Our Technology</a></li>
+                    <li><a href="#">Documentation</a></li>
+                  </ul>
+                </div>
+              </div> -->
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+                <div class="widget">
+                  <h3 class="block-title">Support</h3>
+                  <ul class="menu">
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#" class="disabledcontact">Contact Us</a>
+                        <br><p style="color: white;">Email : 
+                        <br>
+                        Phone No:
+                      </p>
+                        </li>
+                      <!--Redirects to the Instruction Manual-->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Copyright Start  -->
+          <div class="copyright">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="site-info float-left">
+                    <!-- <p>&copy; 2020 - Designed by <a href="http://uideck.com" rel="nofollow">UIdeck</a></p> -->
+                  </div>              
+                  <div class="float-right">  
+                    <ul class="footer-social">
+                      <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
+                      <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                      <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
+                      <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                    </ul> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Copyright End -->
+        </section>
+        <!-- Footer area End -->
+
+        
+      </footer>
+      <!-- Footer Section End --> 
+  
+
+    
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader" id="loader-1"></div>
+      </div>
+      <!-- End Preloader -->
+
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="{% static "Root_page/js/jquery-min.js" %}"></script>
+    <script src="{% static "Root_page/js/popper.min.js" %}"></script>
+    <script src="{% static "Root_page/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "Root_page/js/owl.carousel.js" %}"></script> 
+    <script src="{% static "Root_page/js/jquery.mixitup.js" %}"></script>       
+    <script src="{% static "Root_page/js/jquery.nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/scrolling-nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/jquery.easing.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/wow.js" %}"></script>   
+    <script src="{% static "Root_page/js/jquery.counterup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/nivo-lightbox.js" %}"></script>     
+    <script src="{% static "Root_page/js/jquery.magnific-popup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/waypoints.min.js" %}"></script>      
+    <script src="{% static "Root_page/js/form-validator.min.js" %}"></script>
+    <script src="{% static "Root_page/js/contact-form-script.js" %}"></script>   
+    <script src="{% static "Root_page/js/main.js" %}"></script>
+
+    <!-- JavaScript Libraries -->
+  <script src="{% static "Root_page/lib/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/jquery/jquery-migrate.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/easing/easing.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/mobile-nav/mobile-nav.js" %}"></script>
+  <script src="{% static "Root_page/lib/wow/wow.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/waypoints/waypoints.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/counterup/counterup.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/isotope/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "Root_page/lib/lightbox/js/lightbox.min.js" %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static "Root_page/js/mainworks.js" %}"></script>
+
+
+
+
+</body>
+</html>

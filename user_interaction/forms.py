@@ -2,6 +2,14 @@ from django import forms
 import re
 from .models import StudentAccount
 
+
+BOOLEAN_CHOICES =[
+    ('Yes','Yes'),
+    ('No','No')
+]
+
+
+
 class raw_user_form(forms.Form):
     full_name = forms.CharField(label='Full Name',widget=forms.TextInput(attrs={'class' : 'form-control-lg form-control reginput','placeholder' : 'Full Name','id':'reginput'}))
     roll_no = forms.CharField(label='Roll No',widget=forms.TextInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Roll No'}))
@@ -12,6 +20,7 @@ class raw_user_form(forms.Form):
     department = forms.CharField(label='Department',widget=forms.TextInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Department'}))
     password = forms.CharField(label='Password',widget=forms.PasswordInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Password'}))
     confirm_password = forms.CharField(label='Confirm Password',widget=forms.PasswordInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Confirm Password'}))
+    batch_year = forms.CharField(label='Batch Year',widget=forms.TextInput(attrs={'class' : 'form-control form-control-lg','placeholder' : 'Joining Year'}))
 
     def clean_full_name(self):
         data = self.cleaned_data.get('full_name')
@@ -66,10 +75,25 @@ class raw_user_form(forms.Form):
          if fd==0:
              raise forms.ValidationError("Password should contain atleast one number from 0-9!")
          return data
-    
+
     def clean_confirm_password(self):
         data1 = self.cleaned_data.get('password')
         data = self.cleaned_data.get('confirm_password')
 
         if data != data1:
             raise forms.ValidationError("Doesn't match with the original password!")
+
+class medical_report_form(forms.Form):
+    
+    diabetes = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    pulmonary_diseases = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    high_low_pressure = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    respiratory_diseases = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    any_other = forms.CharField(label='Mention',widget=forms.TextInput(attrs={'class' :'form-control','id' : 'exampleFormControlTextarea1','rows':'3'}))
+    contact30 = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    diagnose30 = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    visit10 = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    fever = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    dry_cough = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    breathing_prob = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)
+    sore_throat = forms.ChoiceField(choices=BOOLEAN_CHOICES, widget=forms.RadioSelect)

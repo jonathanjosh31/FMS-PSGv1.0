@@ -8,12 +8,9 @@
 <body>
     {% for entry in user_entry %}
     <h2>
-        Year : {{ entry.Year }}
-        Month : {{ entry.Month }}
-        Day : {{ entry.Day }}
-        Hour : {{ entry.Hour }}
-        Minute : {{ entry.Minute }}
-        Second : {{ entry.Second }}
+        {{ entry.Serial_No }})
+        Date : {{ entry.Year }}/{{ entry.Month }}/{{ entry.Day }}
+        Time : {{ entry.Hour }}:{{ entry.Minute }}:{{ entry.Second }}
     </h2>
     {% endfor %}
 </body>

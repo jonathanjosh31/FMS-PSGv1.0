@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+    <title>Proton - Bootstrap 4 Template</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static "Root_page/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/line-icons.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.carousel.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/owl.theme.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/nivo-lightbox.css" %}">
+    <link rel="stylesheet" href="{% static "Root_page/css/main.css" %}">    
+    <link rel="stylesheet" href="{% static "Root_page/css/responsive.css" %}">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <style>
+      @media only screen and (min-width: 992px) {
+        #screenshotcarousel  > .item > .screenshot-thumb > img {
+          width:1000px;
+          height:360px;
+}
+      }
+
+    </style>
+
+  </head>
+  
+  <body>
+
+    <!-- Header Section Start -->
+    <header id="home" class="hero-area-2">    
+      <div class="overlay"></div>
+      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+        <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="{% static "Root_page/img/Psglogonav.png" %}" alt=""></a>
+          
+            <p class="Logotitle" style="font-family: 'Oswald', sans-serif;font-size: 13px;">PSG College of Technology Presents</p>
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse1">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#app-features">Features</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#features-two">How it works?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#screenshots">Screenshots</a>
+              </li>                              
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#blog">Blog</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#footerdown">Get in Touch</a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </nav>  
+      <div class="container">      
+        <div class="row space-100">
+          <div class="col-lg-7 col-md-12 col-xs-12">
+            <div class="contents">
+              <h2 class="head-title">COVID-19<br>Screening Kiosk </h2>
+              <p>The COVID-19 Screening Kisok is a thermal screening device that monitors the body temperature of the users.</p>
+              <div class="header-button">
+                <a href="{% url 'studentlogin' %}" class="btn btn-border-filled">Login</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-12 col-xs-12">
+            <div class="intro-img">
+              <img src="{% static "Root_page/img/frontlogo.png" %}" alt="">
+            </div>            
+          </div>
+        </div> 
+      </div>             
+    </header>
+    <!-- Header Section End --> 
+
+    <!-- features Section Start -->
+    <div id="app-features" class="section" style="background-color: white;">
+      <div class="container">
+        <div class="section-header">   
+          <p class="btn btn-subtitle wow fadeInDown" data-wow-delay="0.2s">features</p>       
+          <h2 class="section-title wow fadeIn" data-wow-delay="0.2s">Our Device Features</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="content-left text-right">
+              <div class="box-item left">
+              <h5 class="section-title wow fadeIn text-center" data-wow-delay="0.2s"></h5>
+              </div>
+              <div class="box-item left">
+                <span class="icon">
+                  <i class="lni-leaf"></i>
+                </span>
+                <div class="text">
+                  <h4>User Friendly</h4>
+                  <p>Scan your day-to-day body temperatures easily with the provided QR Code.</p>
+                </div>
+              </div>
+              <div class="box-item left">
+                <span class="icon">
+                  <i class="lni-dashboard"></i>
+                </span>
+                <div class="text">
+                  <h4>Stats</h4>
+                  <p>Keep in track with people's body temperatures with temperature analysis charts,etc.</p>
+                </div>
+              </div>
+              <div class="box-item left">
+                <span class="icon">
+                  <i class="lni lni-alarm"></i>
+                </span>
+                <div class="text">
+                  <h4>Alerts</h4>
+                  <p>Get an alerted notification whenever someone has abnormal temperatures.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="show-box">
+              <img src="{% static "Root_page/img/features/features1.png" %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="content-right text-left">
+              <div class="box-item right">
+                <h5 class="section-title wow fadeIn text-center" data-wow-delay="0.2s"></h5>
+                </div>
+              <div class="box-item right">
+                <span class="icon">
+                  <i class="lni-shield"></i>
+                </span>
+                <div class="text">
+                  <h4>Safe</h4>
+                  <p>No touch interaction to reduce infection risk.</p>
+                </div>
+              </div>
+              <div class="box-item right">
+                <span class="icon">
+                  <i class="lni-star-filled"></i>
+                </span>
+                <div class="text">
+                  <h4>Pending</h4>
+                  <p>Pending .</p>
+                </div>
+              </div>
+              <div class="box-item right">
+                <span class="icon">
+                  <i class="lni-shield"></i>
+                </span>
+                <div class="text">
+                  <h4>Management</h4>
+                  <p>Admins can maintain all employee and patients temperature stats in the hospital.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- features Section End -->
+
+    <!-- Start Video promo Section -->
+    <section class="video-promo section">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+              <div class="video-promo-content text-center">
+                <a href="https://www.youtube.com/watch?v=yP6kdOZHids" class="video-popup disabledcomingsoon"><i class="lni-film-play"></i></a>
+                <h2 class="mt-3 wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Customizable Screen Saver Videos</h2>
+                <h6 class="mt-3 wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Options to play customized videos when no scans are performed on the device. This allows companies to promote their brand/products with a personalized message.</h6>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Video Promo Section -->
+
+    <!-- Features Section Start -->
+    <div id="features-two" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+              <img class="img-fluid" src="{% static "Root_page/img/features/howitworks.jpg" %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="text-wrapper wow fadeInRight" data-wow-delay="0.6s">
+              <div>
+                <p class="btn btn-subtitle">How It Works?</p>  
+                <h3>Contactless COVID-19 Screening System!!</h3>
+                <p>This temperature check tablet is installed to ensure that people entering the college premises are not running a high temperature. It provides alerts when a person runs a high temperature and thus should not enter the premises.
+                  First, the user is supposed to scan their unique QR code in the device. Later, their body temperature is scanned and the output is displayed along with an alert message when the user runs high temperature.</p>
+                <a class="btn btn-rm" href="{% url 'howitworks' %}">Read More <i class="lni-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="text-wrapper wow fadeInRight" data-wow-delay="0.9s">
+              <div>
+                <p class="btn btn-subtitle">Updates</p>  
+                <h3>Regular Updates!</h3>
+                <p>New features and updates will be tested and implemented soon.All the incoming updates will be notified here.</p>
+                <a class="btn btn-rm disabledcomingsoon" href="#">Coming Soon!</i></a>
+              </div>
+            </div>
+          </div>
+           <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="img-thumb wow fadeInLeft" data-wow-delay="1.2s">
+              <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Features Section End -->   
+
+    <!-- Awesome Screens Section Start -->
+    <section id="screenshots" class="screens-shot section">
+      <div class="container">
+        <div class="section-header">   
+          <p class="btn btn-subtitle wow fadeInDown" data-wow-delay="0.2s">Screenshots</p>       
+          <h2 class="section-title">App Screens</h2>
+        </div>
+        <div class="row">
+          <div class="screens-slider owl-carousel" id="screenshotcarousel">
+            <div class="item">
+              <div class="screenshot-thumb">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="" id="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="screenshot-thumb">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="screenshot-thumb">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="screenshot-thumb">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="screenshot-thumb">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="screenshot-thumb">
+                <img class="img-fluid" src="{% static "Root_page/img/features/updates.jpg" %}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Awesome Screens Section End -->  
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+      <!-- Container Starts -->
+      <div class="container">
+         <div class="section-header">   
+          <p class="btn btn-subtitle wow fadeInDown" data-wow-delay="0.2s">Blog</p>       
+          <h2 class="section-title">Recent News</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
+            <!-- Blog Item Starts -->
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="{% url 'blogone' %}">
+                  <img src="{% static "Root_page/img/blog/safetyblog.jpg" %}" alt="">
+                </a>             
+              </div>
+              <div class="blog-item-text"> 
+                <h3><a href="{% url 'blogone' %}">Protective Measures against COVID-19</a></h3>
+                <div class="author">
+                  <span class="name"><a href="#">From the Team</a></span>
+                  <span class="date float-right">17 August, 2020</span>
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item Wrapper Ends-->
+          </div>
+
+           <!-- <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
+            
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="single-post.html">
+                  <img src="img/blog/img2.jpg" alt="">
+                </a>   
+                <div class="author-img">
+                  <img src="img/blog/author.png" alt="">
+                </div>             
+              </div>
+              <div class="blog-item-text"> 
+                <h3><a href="single-post.html">20 Growth Hacking Tips from Experts</a></h3>
+                <div class="author">
+                  <span class="name"><a href="#">Posted by Admin</a></span>
+                  <span class="date float-right">10 April, 2020</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>  -->
+
+          <!-- <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
+            
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="single-post.html">
+                  <img src="img/blog/img3.jpg" alt="">
+                </a>   
+                <div class="author-img">
+                  <img src="img/blog/author.png" alt="">
+                </div>             
+              </div>
+              <div class="blog-item-text"> 
+                <h3><a href="single-post.html">Proton Has Been Launched, Get Started!</a></h3>
+                <div class="author">
+                  <span class="name"><a href="#">Posted by Admin</a></span>
+                  <span class="date float-right">10 April, 2020</span>
+                </div>
+              </div>
+            </div>
+            
+          </div> -->
+          
+          
+        </div>
+        <div class="text-center">         
+        <p class="h5" style = "color:#03b6fc">Check Blog for recent news updates!</p>
+        </div>
+      </div>
+    </section>
+    <!-- blog Section End -->
+
+   
+
+    
+
+    <!-- Footer Section Start -->
+    <footer id="footerdown">
+      <!-- Footer Area Start -->
+      <section class="footer-Content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <p class="footertitle" >COVID-19 Screening Kiosk</p>
+              <div class="textwidget">
+                <p>The COVID-19 Screening Kisok is a thermal screening device that monitors the body temperature of the users.</p>
+              </div>
+              
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="block-title">Resources</h3>
+                <ul class="menu">
+                  <li><a href="#">Sign In</a></li>
+                  <li><a href="http://psgimsr.ac.in/">About the Institution</a></li>
+                  <li><a href="#">Team</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="block-title">Resource</h3>
+                <ul class="menu">
+                  <li><a href="#">Comunnity</a></li>
+                  <li><a href="#">Become a Partner</a></li>
+                  <li><a href="#">Our Technology</a></li>
+                  <li><a href="#">Documentation</a></li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="block-title">Support</h3>
+                <ul class="menu">
+                  <li><a href="#">Terms & Conditions</a></li>
+                  <li><a href="#" class="disabledcontact">Contact Us</a>
+                  <br><p style="color: white;">Email : </p>
+                  <p style="color: white;">Phone no :</p>
+                  </li>
+                      <!--Redirects to the Instruction Manual-->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright Start  -->
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="site-info float-left">
+                  <!-- <p>&copy; 2020 - Designed by <a href="http://uideck.com" rel="nofollow">UIdeck</a></p> -->
+                </div>              
+                <div class="float-right">  
+                  <ul class="footer-social">
+                    <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
+                    <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                  </ul> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Copyright End -->
+      </section>
+      <!-- Footer area End -->
+      
+    </footer>
+    <!-- Footer Section End --> 
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="lni-chevron-up"></i>
+    </a> 
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="{% static "Root_page/js/jquery-min.js" %}"></script>
+    <script src="{% static "Root_page/js/popper.min.js" %}"></script>
+    <script src="{% static "Root_page/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "Root_page/js/owl.carousel.js" %}"></script> 
+    <script src="{% static "Root_page/js/jquery.mixitup.js" %}"></script>       
+    <script src="{% static "Root_page/js/jquery.nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/scrolling-nav.js" %}"></script>    
+    <script src="{% static "Root_page/js/jquery.easing.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/wow.js" %}"></script>   
+    <script src="{% static "Root_page/js/jquery.counterup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/nivo-lightbox.js" %}"></script>     
+    <script src="{% static "Root_page/js/jquery.magnific-popup.min.js" %}"></script>     
+    <script src="{% static "Root_page/js/waypoints.min.js" %}"></script>      
+    <script src="{% static "Root_page/js/form-validator.min.js" %}"></script>
+    <script src="{% static "Root_page/js/contact-form-script.js" %}"></script>   
+    <script src="{% static "Root_page/js/main.js" %}"></script>
+
+
+    
+  </body>
+</html>

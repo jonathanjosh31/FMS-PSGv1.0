@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts and icons -->
+	<script src="{% static "user_interaction/assets/js/plugin/webfont/webfont.min.js" %}"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: [ '{% static "user_interaction/assets/css/fonts.min.css" %}' ]},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+    <!-- CSS Files -->
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/assets/css/atlantis.min.css" %}">
+	<link rel="stylesheet" href="{% static "user_interaction/css/hover5.css" %}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        .navbar-header[data-background-color="blue2"] {
+            background: #03b6fc !important; }
+        .logo-header[data-background-color="blue2"] {
+            background: #03b6fc !important; }
+		.center {
+        	margin: auto;
+        	width: 70%;
+        	padding: 10px;
+    	}
+    </style>
+
+
+    <title>Document</title>
+</head>
+<body>
+    
+	<div class="wrapper overlay-sidebar">
+
+		<div class="wrapper">
+		<!-- Navbar -->
+
+		<div class="main-panel">
+		
+				<div id="vantajs">
+					<h1 class="text-center pt-4 text-white text-bold" style="font-family: 'Poppins', sans-serif;font-size:60px;"> Visitor Status </h1>
+				</div>
+				<br><br><br><br>
+				<div class="row container-fluid">
+					<div class="col-md-6">
+						<h1 class="text-center text-success pt-3 font-weight-light pb-4 pr-4" style="font-size:45px;">Completed</h1>
+						{% for entry in completed %}
+						{% if comlen > penlen %}
+							<div class="row container-fluid pl-5" style="border-right: solid 1px rgb(177, 173, 173);">
+						{% else %}
+							<div class="row container-fluid pl-5">
+						{% endif %}	
+							<div class="col-md-6 center">
+								<div class="card hvr-radial-out" style="box-shadow: 1px 3px 13px rgb(204, 202, 202);">
+									<div class="card-body pb-0">
+										<h2 class="mb-2 text-center text-uppercase" style="font-family: 'Poppins', sans-serif;">Name : {{ entry.name }}</h2>
+										<div class="text-center">
+											<div class="avatar avatar-xxl" style="width: 15em;height: 15em;">
+												<img src="https://via.placeholder.com/50x50" alt="..." class="avatar-img rounded-circle">
+											</div>
+										</div>
+										<br>
+										<p class="text-center hvr-radial-out:before" style="font-family: 'Poppins', sans-serif;">Phone No : {{ entry.phoneno }} <br>Temperature : {{ entry.temp }}</p>
+										
+										<div class="text-center">
+											<button type="button" class="btn btn-success btn-rounded mb-3" data-toggle="modal" data-target="#exampleModalCenter1">
+												View Details
+											</button>
+											</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						{% endfor %}
+					</div>
+					
+					<div class="col-md-6">
+						<h1 class="text-center text-danger pt-3 font-weight-light pb-4" style="font-size:45px;">Pending</h1>
+						{% for entry in pending %}
+						{% if penlen > comlen %}
+							<div class="row container-fluid pl-5" style="border-left: solid 1px rgb(177, 173, 173);">
+						{% else %}
+							<div class="row container-fluid pl-5">
+						{% endif %}	
+							<div class="col-md-6 center">
+								<div class="card hvr-radial-out" style="box-shadow: 1px 3px 13px rgb(204, 202, 202);">
+									<div class="card-body pb-0">
+										
+										<h2 class="mb-2 text-center text-uppercase" style="font-family: 'Poppins', sans-serif;">Name : {{ entry.name }}</h2>
+										<div class="text-center">
+											<div class="avatar avatar-xxl" style="width: 15em;height: 15em;">
+												<img src="https://via.placeholder.com/50x50" alt="..." class="avatar-img rounded-circle">
+											</div>
+										</div>
+										<br>
+										<p class="text-center hvr-radial-out:before" style="font-family: 'Poppins', sans-serif;">Phone No : {{ entry.phoneno }} <br> Temperature : {{ entry.temp }}</p>
+										<div class="text-center">
+											<button type="button" class="btn btn-danger btn-rounded mb-3" data-toggle="modal" data-target="#exampleModalCenter2">
+												View Details
+											</button>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h3 class="modal-title" style="font-family: 'Poppins', sans-serif;">Patient Details</h3>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<p>Name : Nitish</p>
+								<p>Phone No : 9573482367</p>
+								<p>Entry Timestamp : 21 Aug 2020 11:58:15 PM</p>
+								<p>Temperature : 99 &#8457;</p>
+								<p>Report : Doctor Report</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Mark as Pending</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	
+	</div>
+		</div>
+	</div>
+	
+
+
+     <!--   Core JS Files   -->
+	<script src="{% static "user_interaction/assets/js/core/jquery.3.2.1.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/popper.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/core/bootstrap.min.js" %}"></script>
+
+	<!-- jQuery UI -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" %}"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js" %}"></script>
+
+
+	<!-- Chart JS -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart.js/chart.min.js" %}"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="{% static "user_interaction/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js" %}"></script>
+
+	<!-- Chart Circle -->
+	<script src="{% static "user_interaction/assets/js/plugin/chart-circle/circles.min.js" %}"></script>
+
+	<!-- Datatables -->
+	<script src="{% static "user_interaction/assets/js/plugin/datatables/datatables.min.js" %}"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="{% static "user_interaction/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js" %}"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/jquery.vmap.min.js" %}"></script>
+	<script src="{% static "user_interaction/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" %}"></script>
+
+	<!-- Sweet Alert -->
+	<script src="{% static "user_interaction/assets/js/plugin/sweetalert/sweetalert.min.js" %}"></script>
+
+	<!-- Atlantis JS -->
+	<script src="{% static "user_interaction/assets/js/atlantis.min.js" %}"></script>
+	
+	<!-- Vanta JS -->
+    <script src="{% static "user_interaction/js/three.r119.min.js" %}"></script>
+    <script src="{% static "user_interaction/js/vanta.waves.min.js" %}"></script>
+
+    <script>
+        VANTA.WAVES({
+          el: "#vantajs",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x2f91cc,
+          shininess: 13.00,
+          waveHeight: 19.50,
+          waveSpeed: 1.40,
+          zoom: 1.23
+        });
+        </script>
+
+</body>
+</html>
