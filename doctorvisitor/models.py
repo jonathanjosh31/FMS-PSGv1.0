@@ -61,6 +61,6 @@ class Doctor(AbstractBaseUser):
     def has_module_perms(self,app_label):
         return True
 
-class VisitorsToday(models.Model):
+class Visitors(models.Model):
     account = models.ForeignKey(Doctor,on_delete=models.CASCADE)
     entries = JSONField(default=list)

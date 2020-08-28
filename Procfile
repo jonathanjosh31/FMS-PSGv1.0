@@ -1,0 +1,1 @@
+web: gunicorn fms_project.wsgi --log-file

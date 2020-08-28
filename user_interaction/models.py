@@ -13,8 +13,6 @@ def qrcode_directory_path(instance,filename):
 
 
 
-
-
 class StudentAccountManager(BaseUserManager):
     #to overwrite   create_user  and  create_superuser 
 
